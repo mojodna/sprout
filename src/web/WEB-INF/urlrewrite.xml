@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 2.5//EN"
+        "http://tuckey.org/res/dtds/urlrewrite2.5.dtd">
+
+<!--
+    Configuration file for UrlRewriteFilter
+    http://tuckey.org/urlrewrite/
+-->
+<urlrewrite>
+	<rule>
+	    <note>
+	        This redirects URLs in the form:
+	        /:controller:/:action:/:id:
+	        to
+	        /:controller:/:action:.do?:id:
+	    </note>
+		<from>^/(([\w\d_-]+)/)?([\w\d_-]+)/?([\w\d]*)\??(.*)$</from>
+		<to last="true">/$1$3.do?id=$4&amp;$5</to>
+	</rule>
+</urlrewrite>
+

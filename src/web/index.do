@@ -1,0 +1,1 @@
+<%-- This is a placeholder file that causes Struts to treat / as /index.do --%>

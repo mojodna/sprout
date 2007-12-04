@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+    <form-beans>
+		<form-bean name="ExampleActionForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="ComplexForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.Integer" />
+			<form-property name="name" type="java.lang.String" />
+			<form-property name="greeting" type="java.lang.String" />
+		</form-bean>
+    </form-beans>
+
+    <global-forwards>
+        <!-- Add global forwards here.  -->
+        <forward name="example.index" path="/" redirect="true"/>
+    </global-forwards>
+
+	<action-mappings>
+	    <!-- Unnecessary with Sprout; this is where legacy mappings go. -->
+	</action-mappings>
+	
+	<!-- Define an alternate RequestProcessor -->
+    <controller nocache="true" maxFileSize="5M" processorClass="net.mojodna.sprout.SproutRequestProcessor" />
+
+    <plug-in className="net.mojodna.sprout.SproutAutoLoaderPlugIn"/>
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+</struts-config>

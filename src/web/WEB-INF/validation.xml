@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN"
+          "http://jakarta.apache.org/struts/dtds/validation_1_1.dtd">
+
+<form-validation>
+  <formset>
+    <!-- Standard DynaValidatorForm validation definitions -->
+    <form name="ComplexForm">
+      <field property="name" depends="required">
+        <!-- Usage of resource="false" results in "You name is required" -->
+        <arg0 name="required" key="Your name" resource="false" />
+      </field>
+    </form>
+    </formset>
+</form-validation>

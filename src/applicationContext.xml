@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+ 
+<beans default-autowire="byName">
+    <!-- Service beans -->
+	<bean id="exampleBean" class="net.mojodna.sprout.example.ExampleBean" />
+	
+	<!-- Action beans -->
+	<bean name="ExampleAction" class="net.mojodna.sprout.action.ExampleAction" singleton="true" />
+    <bean name="SubDirectoryAction" class="net.mojodna.sprout.action.subdir.SubDirectoryAction" singleton="true" />
+</beans>
